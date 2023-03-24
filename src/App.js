@@ -4,12 +4,16 @@ import CustomButton from './CustomButton';
 import { useState } from 'react';
 
 export default function App() {
-  const [buttons, setButtons] = useState([0]);
+  const [buttons, setButtons] = useState(1);
 
   const createNewInstance = (e) => {
     e.preventDefault();
-    setButtons([...buttons, buttons.length]);
+    setButtons(buttons + 1);
   };
 
-  return buttons.map((button) => <CustomButton onNewInstance={createNewInstance} key={button}/>);
+  const components = [];
+  for (let i=0; i<buttons; i++) {
+      components.push(<CustomButton onNewInstance={createNewInstance} key={i}/>);
+  }
+  return components;
 }

@@ -38,10 +38,10 @@ export default function CustomButton({ onNewInstance }) {
   };
 
   return (
-    <p className={'container'}>
+    <div className={'container'}>
       <div>Direction: {curDirection.current}</div>
       <div>Value: {value}</div>
       <button onClick={changeValue}>Click Me</button>
-    </p>
+    </div>
   );
 }
